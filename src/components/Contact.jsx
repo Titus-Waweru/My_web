@@ -1,7 +1,8 @@
+// src/pages/Contact.jsx
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   useEffect(() => {
@@ -30,14 +31,19 @@ export default function Contact() {
           data-aos="fade-right"
         >
           <h2 className="text-2xl font-bold text-blue-600 mb-6">Send a Message</h2>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="space-y-6"
+            action="mailto:tituswaweru631@gmail.com"
+            method="POST"
+            encType="text/plain"
+          >
             <div>
               <label htmlFor="name" className="block mb-2 font-semibold text-gray-700">
                 Full Name
               </label>
               <input
                 type="text"
-                id="name"
+                name="name"
                 required
                 placeholder="Your full name"
                 className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
@@ -50,7 +56,7 @@ export default function Contact() {
               </label>
               <input
                 type="email"
-                id="email"
+                name="email"
                 required
                 placeholder="you@example.com"
                 className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
@@ -62,7 +68,7 @@ export default function Contact() {
                 Message
               </label>
               <textarea
-                id="message"
+                name="message"
                 rows="5"
                 required
                 placeholder="Write your message here..."
@@ -74,7 +80,7 @@ export default function Contact() {
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition duration-300"
             >
-              📤 Send Message
+              📤 Send via Email
             </button>
           </form>
         </div>
@@ -104,6 +110,17 @@ export default function Contact() {
                 +254 745 745 186
               </a>
             </li>
+            <li>
+              💬 WhatsApp:{' '}
+              <a
+                href="https://wa.me/254745745186?text=Hi%20Titus%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 font-semibold hover:underline"
+              >
+                Message me now →
+              </a>
+            </li>
             <li>📍 Location: Nairobi, Kenya</li>
           </ul>
 
@@ -115,7 +132,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Social + Website Footer Section */}
+      {/* Footer Section with Social Links */}
       <div className="max-w-4xl mx-auto mt-20 pt-12 border-t border-gray-300 text-center space-y-4">
         <p className="text-sm text-gray-500 font-medium">
           Visit our official site:{' '}
@@ -153,6 +170,14 @@ export default function Contact() {
             className="hover:text-blue-800"
           >
             <FaTwitter size={20} />
+          </a>
+          <a
+            href="https://wa.me/254745745186?text=Hi%20Titus%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-600"
+          >
+            <FaWhatsapp size={22} />
           </a>
         </div>
 
